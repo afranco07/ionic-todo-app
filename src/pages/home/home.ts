@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
+import firebase from 'firebase';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'page-home',
@@ -8,10 +12,13 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 })
 export class HomePage {
 
-  tasks: AngularFireList<any>;
+  tasks: Observable<any[]>;
 
   constructor(public navCtrl: NavController, fireDatabase: AngularFireDatabase) {
-    this.tasks = fireDatabase.list('/tasks');
+    this.tasks = fireDatabase.list('tasks').valueChanges();
+  }
+
+  ionViewDidLoad() {
   }
 
 }
