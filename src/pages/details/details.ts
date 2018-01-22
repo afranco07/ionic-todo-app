@@ -14,6 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'details.html',
 })
 export class DetailsPage {
+  title: string = this.navParams.get('title');
+  message: string = this.navParams.get('message');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

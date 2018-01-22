@@ -19,8 +19,8 @@ export class HomePage {
     this.tasks = fireDatabase.list('tasks').valueChanges();
   }
 
-  viewDetails() {
-    this.navCtrl.push(DetailsPage);
+  viewDetails(taskInfo) {
+    this.navCtrl.push(DetailsPage, taskInfo);
   }
 
 }
