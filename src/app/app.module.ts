@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 import { CreatePage } from '../pages/create/create';
+import { DetailsPage } from '../pages/details/details';
 
 const environment = {
   production: false,
@@ -37,6 +38,7 @@ const environment = {
     HomePage,
     TabsPage,
     CreatePage,
+    DetailsPage,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ const environment = {
     HomePage,
     TabsPage,
     CreatePage,
+    DetailsPage,
   ],
   providers: [
     StatusBar,

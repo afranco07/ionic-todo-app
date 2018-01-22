@@ -4,6 +4,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
 import firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
+import { DetailsPage } from '../details/details';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class HomePage {
     this.tasks = fireDatabase.list('tasks').valueChanges();
   }
 
-  ionViewDidLoad() {
+  viewDetails() {
+    this.navCtrl.push(DetailsPage);
   }
 
 }

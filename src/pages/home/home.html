@@ -9,7 +9,7 @@
   <p>
     Below are the todo's you have to do!
   </p>
-  <ion-card *ngFor="let task of tasks | async">
+  <ion-card *ngFor="let task of tasks | async" (click)="viewDetails()">
     <ion-card-header>
       {{task.title}}
     </ion-card-header>
