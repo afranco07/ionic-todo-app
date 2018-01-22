@@ -28,6 +28,7 @@ export class CreatePage {
   createTask(taskTitle: string, taskMessage: string) {
     const taskRef: firebase.database.Reference = firebase.database().ref(`/tasks`);
     taskRef.push(this.taskData);
+    this.taskData = {};
   }
 
 }
