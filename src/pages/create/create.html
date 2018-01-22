@@ -15,16 +15,18 @@
 
 <ion-content padding>
   <ion-list>
+    <form (ngSubmit)="createTask()">
     <ion-item>
       <ion-label floating>Task Name</ion-label>
-      <ion-input type="text" [(ngModel)]="taskTitle"></ion-input>
+      <ion-input type="text" [(ngModel)]="taskData.title" name="title"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Task Info</ion-label>
-      <ion-textarea [(ngModel)]="taskMessage" ></ion-textarea>
+      <ion-textarea [(ngModel)]="taskData.message" name="message"></ion-textarea>
     </ion-item>
     <ion-item>
-      <button ion-button full (click)="createTask(taskTitle, taskMessage)">Create Task</button>
+      <button ion-button type="submit" full>Create Task</button>
     </ion-item>
+    </form>
   </ion-list>
 </ion-content>

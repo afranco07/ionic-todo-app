@@ -16,6 +16,7 @@ import firebase from 'firebase';
   templateUrl: 'create.html',
 })
 export class CreatePage {
+  taskData = {}
 
   constructor(public navCtrl: NavController, public navParams: NavParams, fireDatabase: AngularFireDatabase) {
   }
@@ -26,10 +27,7 @@ export class CreatePage {
 
   createTask(taskTitle: string, taskMessage: string) {
     const taskRef: firebase.database.Reference = firebase.database().ref(`/tasks`);
-    taskRef.push({
-      title: taskTitle,
-      message: taskMessage,
-    })
+    taskRef.push(this.taskData);
   }
 
 }
