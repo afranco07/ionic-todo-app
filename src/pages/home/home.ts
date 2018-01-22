@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,10 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  tasks: AngularFireList<any>;
 
+  constructor(public navCtrl: NavController, fireDatabase: AngularFireDatabase) {
+    this.tasks = fireDatabase.list('/tasks');
   }
 
 }

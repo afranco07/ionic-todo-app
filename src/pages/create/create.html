@@ -17,14 +17,14 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Task Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="taskTitle"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Task Info</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="taskMessage" ></ion-textarea>
     </ion-item>
     <ion-item>
-      <button ion-button full>Create Task</button>
+      <button ion-button full (click)="createTask(taskTitle, taskMessage)">Create Task</button>
     </ion-item>
   </ion-list>
 </ion-content>
