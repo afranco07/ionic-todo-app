@@ -26,12 +26,9 @@ export class CreatePage {
 
   createTask(taskTitle: string, taskMessage: string) {
     const taskRef: firebase.database.Reference = firebase.database().ref(`/tasks`);
-    const key = taskRef.push().key
-    console.log(key);
     taskRef.push({
       title: taskTitle,
       message: taskMessage,
-      id: key
     })
   }
 

@@ -16,6 +16,7 @@
 <ion-content padding>
   <h1>{{title}}</h1>
   <p>{{message}}</p>
-  <button ion-button full color="danger">Delete</button>
+  <p>{{key}}</p>
+  <button ion-button full color="danger" (click)="deleteTask()">Delete</button>
   <button ion-button full>Update</button>
 </ion-content>
