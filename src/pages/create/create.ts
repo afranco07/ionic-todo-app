@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import firebase from 'firebase';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CreatePage page.
@@ -18,7 +19,7 @@ import firebase from 'firebase';
 export class CreatePage {
   taskData = {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, fireDatabase: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, fireDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,8 +28,18 @@ export class CreatePage {
 
   createTask(taskTitle: string, taskMessage: string) {
     const taskRef: firebase.database.Reference = firebase.database().ref(`/tasks`);
-    taskRef.push(this.taskData);
+    taskRef.push(this.taskData).then( () => this.successPrompt());
     this.taskData = {};
+    this.navCtrl.parent.select(0);
+  }
+
+  successPrompt() {
+    let prompt = this.alertCtrl.create({
+      title: 'Success!',
+      subTitle: 'New Task added successfully!',
+      buttons: ['OK'],
+    });
+    prompt.present();
   }
 
 }
