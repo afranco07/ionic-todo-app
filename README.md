@@ -1,6 +1,8 @@
 # Demo
 ![ionic todo app demo](https://github.com/afranco07/gifImageStorage/blob/master/ionicTodoGif.gif?raw=true)
 
+[YouTube video](https://youtu.be/ofVKAEJdtVg)
+
 # Required before install
 You must have ionic and cordova installed! Use the following command before trying to run the app if you do not have them installed
 ```bash
